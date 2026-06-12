@@ -1,0 +1,35 @@
+body {
+    background-color: aliceblue;
+}
+
+.card-filme {
+    transition: 0.3;
+    cursor: pointer;
+}
+
+.card-filme:hover {
+    transform: scale(1.03);
+}
+
+.card-filme img {
+    /* height: 400px; */
+    object-fit: cover;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    border-radius: 15px;
+    padding: 10px 30px;
+    background-color: #000;
+    border: none;
+}
+
+button a {
+    text-decoration: none;
+    color:aliceblue;
+}
