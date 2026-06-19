@@ -1,35 +1,8 @@
-const filmes = [{
-    titulo: "Vingadores",
-    imagem: "https://media.themoviedb.org/t/p/w300_and_h450_face/7D2DosFWqmNc0vfZJPqwY5uIvsR.jpg",
-    descricao: "Os maiores heróis da terra unidos.",
-},
-{
-    titulo: "Batman",
-    imagem: "https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg",
-    descricao: "O cavaleiro das trevas,"
-},
-{
-    titulo: "Homem-Aranha",
-    imagem: "https://image.tmdb.org/t/p/w500/fVzXp3NwovUlLe7fvoRynCmBPNc.jpg",
-    descricao: "O amigo da vizinhança",
-},
-{
-    titulo: "Doutor Estranho",
-    imagem: "https://media.themoviedb.org/t/p/w300_and_h450_face/pb4clPWRJ5AKlSFu1HrrHdt5uAw.jpg",
-    descricao: "O mago do universo Marvel"
-},
-{
-    titulo: "Interestelar",
-    imagem: "https://media.themoviedb.org/t/p/w300_and_h450_face/6ricSDD83BClJsFdGB6x7cM0MFQ.jpg",
-    descricao: "Um viajante no tempo"
-},
-{
-    titulo: "Velozes e furiosos desafio em Tóquio",
-    imagem: "https://media.themoviedb.org/t/p/w300_and_h450_face/1kzW2GImY1YVmLRx3NLhXFBfLLO.jpg",
-    descricao: "Uma série de carros de corrida"
+async function carregarFilmes() {
+    const resposta = await fetch("https://localhost:5000/filmes")
+    const filmes = await resposta.json()
+    mostrarFilmes(filmes)
 }
-]
-
  const listarFilmes = document.getElementById("listarFilmes");
  
  function mostrarFilmes(lista) {
@@ -50,7 +23,8 @@ const filmes = [{
     })
 }
 
-mostrarFilmes(filmes)
+carregarFilmes(filmes)
+
 function verDetalhes(titulo) {
     Swal.fire({
         títle: titulo,
